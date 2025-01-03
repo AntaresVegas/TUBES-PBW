@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="styles/signin.css">
+    <link rel="stylesheet" href="src/signin.js">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="logo">
+            <span>&#9835;</span>
+            <span>CapiList</span>
+        </div>
+        <nav>
+            <a href="#">Setlist</a>
+            <a href="#">Artists</a>
+            <a href="#">Festivals</a>
+            <a href="#">About Us</a>
+        </nav>
+        <div class="auth-buttons">
+            <button class="sign-in">Sign in</button>
+            <button class="register">Register</button>
+        </div>
+    </header>
+
+    <!-- Sign-In Container -->
+    <div class="sign-in-container">
+        <h1>Sign in</h1>
+        <form>
+            <input type="text" placeholder="Email / Username" required>
+            <div class="password-container">
+                <input type="password" placeholder="Password" id="password" required>
+                <span onclick="togglePassword()">Hide</span>
+            </div>
+            <a href="#">Forget password?</a>
+            <button type="submit">Sign in</button>
+        </form>
+    </div>
+</body>
+</html>
