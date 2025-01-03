@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users List</title>
+    <link rel="stylesheet" href="E:\PBW\Tubes\demo\src\main\resources\static\styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Users List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <!-- Data dari database akan dimuat di sini -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // Fetch data dari API dan render ke tabel
+        async function fetchUsers() {
+            try {
+                const response = await fetch('http://localhost:8080/users'); // Ganti URL sesuai endpoint API Anda
+                const users = await response.json();
+
+                const tableBody = document.getElementById('userTableBody');
+                users.forEach(user => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${user.id}</td>
+                        <td>${user.username}</td>
+                        <td>${user.password}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching users:', error);
+            }
+        }
+
+        // Panggil fungsi untuk mengambil data saat halaman dimuat
+        fetchUsers();
+    </script>
+</body>
+</html>
