@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles/register.css">
+    <link rel="stylesheet" href="src/register.js"">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="logo">
+            <span>&#9835;</span>
+            <span>CapiList</span>
+        </div>
+        <nav>
+            <a href="#">Setlist</a>
+            <a href="#">Artists</a>
+            <a href="#">Festivals</a>
+            <a href="#">About Us</a>
+        </nav>
+        <div class="auth-buttons">
+            <button class="sign-in">Sign in</button>
+            <button class="register">Register</button>
+        </div>
+    </header>
+
+     <!-- Register Container -->
+     <div class="register-container">
+        <h1>Register</h1>
+        <form>
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" placeholder="Full Name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email" required>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Username" required>
+
+            <label for="password">Password</label>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Password" required>
+                <span onclick="togglePassword()">Hide</span>
+            </div>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <!-- Toggle Password Script -->
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleText = passwordInput.nextElementSibling;
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleText.textContent = 'Show';
+            } else {
+                passwordInput.type = 'password';
+                toggleText.textContent = 'Hide';
+            }
+        }
+    </script>
+</body>
+</html>
