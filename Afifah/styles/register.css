@@ -88,7 +88,6 @@ nav a:hover {
 }
 
 /*Register container*/
-
 .register-container {
     background-color: #fff;
     border-radius: 10px;
@@ -97,6 +96,8 @@ nav a:hover {
     width: 100%;
     max-width: 400px;
     text-align: center;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
 }
 
 .register-container h1 {
@@ -105,10 +106,14 @@ nav a:hover {
     color: #333;
 }
 
+.register-container .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
 .register-container label {
     display: block;
-    text-align: left;
-    margin: 10px 0 5px;
+    margin-bottom: 5px;
     font-size: 14px;
     color: #333;
 }
@@ -116,30 +121,34 @@ nav a:hover {
 .register-container input {
     width: 100%;
     padding: 10px;
-    margin: 5px 0 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
+    box-sizing: border-box;
 }
 
 .register-container .password-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     position: relative;
-    margin-bottom: 20px; /* Tambahkan jarak di bawah password */
 }
 
 .register-container .password-container input {
-    flex: 1;
-    margin: 0;
+    width: 100%;
+    padding-right: 60px; 
 }
 
 .register-container .password-container span {
     position: absolute;
+    top: 50%;
     right: 10px;
+    transform: translateY(-50%);
     cursor: pointer;
-    color: #777;
+    font-size: 14px;
+    background: none;
+    border: none;
+}
+
+.register-container .password-container span:hover {
+    text-decoration: underline; 
 }
 
 .register-container button {
@@ -151,6 +160,7 @@ nav a:hover {
     font-size: 16px;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .register-container button:hover {
