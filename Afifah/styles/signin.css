@@ -88,7 +88,7 @@ nav a:hover {
     color: white;
 }
 
-/*Sign in  Container*/
+/*Sign in Container*/
 .sign-in-container {
     background-color: #fff;
     border-radius: 10px;
@@ -106,10 +106,18 @@ nav a:hover {
     color: #333;
 }
 
+.sign-in-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px; /* Konsisten jarak antara label dan input */
+    font-size: 14px;
+    color: #333;
+}
+
 .sign-in-container input {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin-bottom: 15px; /* Konsisten jarak antar input */
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
@@ -136,10 +144,11 @@ nav a:hover {
 
 .sign-in-container a {
     display: block;
-    margin: 10px 0;
+    margin: 15px 0; /* Memberikan jarak di atas dan bawah */
     font-size: 14px;
     color: #007BFF;
     text-decoration: none;
+    text-align: center; /* Membuat teks "Forgot password?" berada di tengah */
 }
 
 .sign-in-container a:hover {
