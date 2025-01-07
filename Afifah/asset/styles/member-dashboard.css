@@ -1,24 +1,9 @@
-  <!-- Header, Navbar -->
-  <header>
-    <div class="logo">
-        <a href="homepage.html" style="text-decoration: none; color: inherit;">
-            <span>&#9835;</span>
-            <span>CapiList</span>
-        </a>
-    </div>
-    <nav>
-        <a href="setlist.html">Setlist</a>
-        <a href="top-artists.html">Artists</a>
-        <a href="festival.html">Festivals</a>
-        <a href="#about">About Us</a>
-    </nav>
-    <div class="auth-buttons">
-        <a href="signin.html" class="sign-in">Sign in</a>
-        <a href="register.html" class="register">Register</a>
-  </div>
-</header>
-
-
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
 
 /* HEADER - Bagian atas halaman */
 header {
@@ -98,9 +83,46 @@ nav a:hover {
     color: white;
   }
 
+  /*container*/
 
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
 
+p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
 
+.dashboard-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
 
-  
+.dashboard-link {
+    display: block;
+    padding: 15px 25px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-link:hover {
+    background-color: #555;
+}

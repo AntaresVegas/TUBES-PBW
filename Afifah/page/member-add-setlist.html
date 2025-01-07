@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Setlist</title>
+    <link rel="stylesheet" href="../asset/styles/member-add-setlist.css">
+</head>
+<body>
+     <!-- Header, Navbar -->
+     <header>
+        <div class="logo">
+            <a href="homepage.html" style="text-decoration: none; color: inherit;">
+                <span>&#9835;</span>
+                <span>CapiList</span>
+            </a>
+        </div>
+        <nav>
+            <a href="setlist.html">Setlist</a>
+            <a href="top-artists.html">Artists</a>
+            <a href="festival.html">Festivals</a>
+            <a href="#about">About Us</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="signin.html" class="sign-in">Sign in</a>
+            <a href="register.html" class="register">Register</a>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <h2>Add New Setlist</h2>
+        <form id="add-setlist-form">
+            <div class="form-group">
+                <label for="show-select">Select Show</label>
+                <select id="show-select" name="show-select" required>
+                    <option value="" disabled selected>Select a show</option>
+                    <option value="Metallica at Johan Cruijff Arena">Metallica at Johan Cruijff Arena</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="setlist">Setlist (separate songs with commas)</label>
+                <textarea id="setlist" name="setlist" placeholder="Enter setlist" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Add Setlist</button>
+        </form>
+    </div>
+    <script src="../src/js/add-setlist.js"></script>
+</body>
+</html>
