@@ -1,10 +1,11 @@
+/* General Styles */
 body {
-    /* Gaya umum untuk keseluruhan halaman */
-    margin: 0;
     font-family: Arial, sans-serif;
-    color: #333;
+    margin: 0;
+    padding: 0;
     background-color: #f9f9f9;
-}
+  }
+
 
 /* HEADER - Bagian atas halaman */
 header {
@@ -51,6 +52,7 @@ nav a:hover {
 
 
 /* Tombol autentikasi (Sign In/Register) */
+/* Tombol autentikasi (Sign In/Register) */
 .auth-buttons {
     display: flex;
     gap: 10px;
@@ -84,89 +86,106 @@ nav a:hover {
     color: white;
   }
 
-/* SEARCH BAR*/
-.search-bar {
+
+/*Setlist  */  
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Setlist takes 2/3 space, profile takes 1/3 */
+    gap: 20px;
+    max-width: 1200px;
     margin: 20px auto;
-    max-width: 600px;
-    text-align: center;
-}
-
-.search-bar input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-/* MAIN SECTION */
-.main-section {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.main-section h1 {
-    /* Judul utama */
-    font-size: 50px;
-    margin-bottom: 10px;
-}
-
-.main-section p {
-    /* Deskripsi */
+    padding: 20px;
+  }
+  
+  /* Setlist Section */
+  .setlist {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .setlist-header h3 {
+    margin: 0;
     font-size: 18px;
-    color: #777;
-}
-
-.main-section button {
-    /* Tombol utama */
+    color: #333;
+  }
+  
+  .setlist-header p {
+    margin: 5px 0 20px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .setlist ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .setlist ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .setlist ul li:last-child {
+    border-bottom: none;
+  }
+  
+  .add-setlist {
+    display: inline-block;
     margin-top: 20px;
-    padding: 10px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+  }
+  
+  .add-setlist:hover {
+    color: #0056b3;
+  }
+  
+  /* Artist Profile Section */
+  .artist-profile {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .artist-profile h4 {
     font-size: 16px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.main-section button:hover {
-    background-color: #555;
-}
-
-/* SLIDESHOW */
-.image-section img {
-    width: 100%;
-    max-height: 450px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .artist-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .artist-card img {
+    border-radius: 8px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-}
+    margin-bottom: 10px;
+  }
+  
+  .artist-card p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
 
-.slideshow-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-
-.slide {
-    display: none;
-    width: 100%;
-}
-
-.fade {
-    /* Efek transisi untuk slide */
-    animation: fadeEffect 1.5s;
-}
-
-@keyframes fadeEffect {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
+  
 /* FOOTER*/
 footer {
     background-color: #333;
@@ -232,62 +251,4 @@ footer {
 
 .footer-links ul li a:hover {
     text-decoration: underline;
-}
-
-
-/* Setlist*/
-.popular-setlist {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.popular-setlist h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.popular-setlist p {
-    font-size: 16px;
-    color: #777;
-    margin-bottom: 20px;
-}
-
-.setlist-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-content: center;
-}
-
-.setlist-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.setlist-item:hover {
-    transform: scale(1.05);
-}
-
-.setlist-item a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.setlist-item h3 {
-    margin: 0 0 10px;
-    font-size: 18px;
-    color: #333;
-}
-
-.setlist-item p {
-    margin: 0;
-    font-size: 14px;
-    color: #555;
 }

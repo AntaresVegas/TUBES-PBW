@@ -59,33 +59,39 @@ nav a {
 nav a:hover {
     background-color: #f0f0f0;
 }
-
+/* Tombol autentikasi (Sign In/Register) */
 .auth-buttons {
     display: flex;
     gap: 10px;
     margin-left: 20px;
-}
-
-.auth-buttons button {
-    padding: 5px 10px;
+  }
+  
+  .auth-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
     font-size: 14px;
     border: 1px solid #333;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .auth-buttons .sign-in {
     background-color: white;
     color: #333;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.auth-buttons .register {
+  }
+  
+  .auth-buttons .register {
     background-color: #333;
     color: white;
-}
-
-.auth-buttons button:hover {
+  }
+  
+  .auth-buttons a:hover {
     background-color: #555;
     color: white;
-}
+  }
 
 /*Register container*/
 .register-container {
