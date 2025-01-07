@@ -49,8 +49,6 @@ nav a:hover {
   background-color: #f0f0f0;
 }
 
-
-/* Tombol autentikasi (Sign In/Register) */
 /* Tombol autentikasi (Sign In/Register) */
 .auth-buttons {
   display: flex;
@@ -225,4 +223,11 @@ footer {
   margin: 0;
   font-size: 14px;
   color: #555;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 32px;
+  margin-bottom: 10px;
 }

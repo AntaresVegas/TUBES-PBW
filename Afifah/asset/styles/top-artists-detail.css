@@ -1,0 +1,234 @@
+/* Reset dasar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+
+/* HEADER - Bagian atas halaman */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    /* Logo pada header */
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo span {
+    margin-left: 5px;
+}
+
+/* NAVBAR - Navigasi di header */
+nav {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    /* Gaya untuk link navigasi */
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Tombol autentikasi (Sign In/Register) */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+  }
+  
+  .auth-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .auth-buttons .sign-in {
+    background-color: white;
+    color: #333;
+  }
+  
+  .auth-buttons .register {
+    background-color: #333;
+    color: white;
+  }
+  
+  .auth-buttons a:hover {
+    background-color: #555;
+    color: white;
+  }
+
+/* Container utama */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Memusatkan konten dalam container */
+}
+
+/* Bagian atas */
+.top-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.top-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.top-section p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Grid untuk daftar konser */
+.concert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Kartu konser */
+.concert-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center; /* Memusatkan teks di setiap kartu */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.concert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.concert-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Hapus warna biru pada tautan */
+.concert-card a {
+    text-decoration: none;
+    color: inherit; /* Warna mengikuti elemen induk */
+}
+
+.concert-card a:hover {
+    text-decoration: underline; /* Opsional, untuk memberikan efek hover */
+}
+
+.concert-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Tautan dalam deskripsi */
+.concert-card p a {
+    color: inherit; /* Warna mengikuti elemen induk */
+    text-decoration: none;
+}
+
+.concert-card p a:hover {
+    text-decoration: underline; /* Opsional, untuk memberikan efek hover */
+}
+
+/* FOOTER*/
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    border-top: 1px solid #444;
+    display: flex;
+    justify-content: space-between; /* Membuat elemen saling berjauhan */
+    align-items: flex-start; /* Menyelaraskan elemen ke atas */
+    flex-wrap: wrap; /* Membuat responsif jika ruang tidak mencukupi */
+}
+
+.footer-about {
+    flex: 1; /* Memberi proporsi pada bagian About Us */
+    max-width: 400px;
+    margin-right: 20px; /* Memberi jarak ke kanan */
+}
+
+.footer-about h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer-about p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ccc;
+    text-align : justify;
+}
+
+.footer-links {
+    display: flex;
+    flex: 2; /* Memberi proporsi lebih pada links */
+    justify-content: space-around; /* Membuat jarak merata antar kolom */
+    flex-wrap: wrap; /* Membuat kolom tetap responsif */
+}
+
+.footer-links div {
+    min-width: 200px; /* Menjaga ukuran minimum setiap kolom */
+    margin-bottom: 20px;
+}
+
+.footer-links h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 5px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
