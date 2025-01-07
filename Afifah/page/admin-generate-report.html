@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Reports</title>
+    <link rel="stylesheet" href="../asset/styles/admin-generate-report.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Generate Reports</h2>
+        <form id="report-form">
+            <div class="form-group">
+                <label for="report-type">Select Report Type</label>
+                <select id="report-type" name="report-type" required>
+                    <option value="" disabled selected>Select report type</option>
+                    <option value="user-report">User Report</option>
+                    <option value="show-report">Show Report</option>
+                    <option value="setlist-report">Setlist Report</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">Generate Report</button>
+        </form>
+    </div>
+    <script src="../src/js/generate-reports.js"></script>
+</body>
+</html>

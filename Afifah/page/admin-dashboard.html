@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Artist</title>
-    <link rel="stylesheet" href="../asset/styles/member-add-artist.css">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../asset/styles/admin-dashboard.css">
 </head>
 <body>
-    <!-- Header, Navbar -->
     <header>
         <div class="logo">
             <a href="homepage.html" style="text-decoration: none; color: inherit;">
@@ -24,19 +23,20 @@
         <div class="auth-buttons">
             <a href="signin.html" class="sign-in">Sign in</a>
             <a href="register.html" class="register">Register</a>
-        </div>
+      </div>
     </header>
 
     <div class="container">
-        <h2>Add New Artist</h2>
-        <form id="add-artist-form">
-            <div class="form-group">
-                <label for="artist-name">Artist Name</label>
-                <input type="text" id="artist-name" name="artist-name" placeholder="Enter artist name" required>
-            </div>
-            <button type="submit" class="submit-btn">Add Artist</button>
-        </form>
+        <h1>Welcome, Admin</h1>
+        <p>Manage all features available for members and admin-specific tasks:</p>
+        <div class="admin-links">
+            <a href="./member-add-artist.html" class="admin-link">Add Artist</a>
+            <a href="./member-add-show.html" class="admin-link">Add Show</a>
+            <a href="./member-add-setlist.html" class="admin-link">Add Setlist</a>
+            <a href="./member-comment.html" class="admin-link">Submit Comment</a>
+            <a href="./admin-manage-user.html" class="admin-link">Manage Users</a>
+            <a href="./admin-generate-report.html" class="admin-link">Generate Reports</a>
+        </div>
     </div>
-
 </body>
 </html>
