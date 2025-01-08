@@ -1,0 +1,88 @@
+/* Reset dasar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container utama */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Memusatkan konten dalam container */
+}
+
+/* Bagian atas */
+.top-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.top-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.top-section p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Grid untuk daftar konser */
+.concert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Kartu konser */
+.concert-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center; /* Memusatkan teks di setiap kartu */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.concert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.concert-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Hapus warna biru pada tautan */
+.concert-card a {
+    text-decoration: none;
+    color: inherit; /* Warna mengikuti elemen induk */
+}
+
+.concert-card a:hover {
+    text-decoration: underline; /* Opsional, untuk memberikan efek hover */
+}
+
+.concert-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Tautan dalam deskripsi */
+.concert-card p a {
+    color: inherit; /* Warna mengikuti elemen induk */
+    text-decoration: none;
+}
+
+.concert-card p a:hover {
+    text-decoration: underline; /* Opsional, untuk memberikan efek hover */
+}
