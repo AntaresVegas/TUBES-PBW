@@ -4,56 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="../asset/styles/register.css">
-    <link rel="stylesheet" href="../src/register.js"">
+    <link rel="stylesheet" href="/styles/register.css">
 </head>
 <body>
     <!-- Navbar -->
     <header>
         <div class="logo">
-            <a href="homepage.html" style="text-decoration: none; color: inherit;">
+            <a href="/" style="text-decoration: none; color: inherit;">
                 <span>&#9835;</span>
                 <span>CapiList</span>
             </a>
         </div>
         <nav>
-            <a href="setlist.html">Setlist</a>
-            <a href="top-artists.html">Artists</a>
-            <a href="festival.html">Festivals</a>
+            <a href="/setlist">Setlist</a>
+            <a href="/artists">Artists</a>
+            <a href="/festivals">Festivals</a>
             <a href="#about">About Us</a>
         </nav>
         <div class="auth-buttons">
-            <a href="signin.html" class="sign-in">Sign in</a>
-            <a href="register.html" class="register">Register</a>
-      </div>
+            <a href="/signin" class="sign-in">Sign in</a>
+            <a href="/register" class="register">Register</a>
+        </div>
     </header>
 
-     <!-- Register Container -->
-     <div class="register-container">
+    <!-- Register Container -->
+    <div class="register-container">
         <h1>Register</h1>
-        <form>
+        <form action="/register" method="post">
             <div class="form-group">
                 <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" placeholder="Full Name" required>
+                <input type="text" id="fullname" name="fullName" placeholder="Full Name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Email" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
             </div>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Username" required>
+                <input type="text" id="username" name="username" placeholder="Username" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <div class="password-container">
-                    <input type="password" id="password" placeholder="Password" required>
-                    <span onclick="togglePassword()">Hide</span>
-                </div>
+                <input type="password" id="password" name="password" placeholder="Password" required>
             </div>
             <button type="submit">Register</button>
         </form>
+        
+
+        <!-- Error Message Handling -->
+        <p id="error-message" style="color: red; display: none;"></p>
     </div>
-    
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleText = event.target;
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleText.textContent = 'Hide';
+            } else {
+                passwordInput.type = 'password';
+                toggleText.textContent = 'Show';
+            }
+        }
+
+        // Error message handler (optional, for dynamic error feedback)
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('error')) {
+            const errorMessage = params.get('error');
+            const errorElement = document.getElementById('error-message');
+            errorElement.textContent = errorMessage;
+            errorElement.style.display = 'block';
+        }
+    </script>
 </body>
 </html>
