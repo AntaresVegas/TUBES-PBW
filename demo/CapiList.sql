@@ -23,6 +23,8 @@ DROP TABLE IF EXISTS Members;
 DROP TABLE IF EXISTS Admins;
 
 SELECT * FROM Members
+SELECT table_name FROM information_schema.tables WHERE table_schema='public';
+
 
 -- Tabel Members
 CREATE TABLE Members (
