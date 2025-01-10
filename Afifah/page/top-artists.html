@@ -28,10 +28,20 @@
     </header>
 
     <!-- Search Bar -->
-    <div class="search-bar">
-        <input type="text" placeholder="Artist, Venue, Tour">
+    <div class="search-container">
+        <div class="search-box">
+            <select id="category-select">
+                <option value="all">All</option>
+                <option value="artist">Artist</option>
+                <option value="venue">Venue</option>
+                <option value="tour">Tour</option>
+            </select>
+            <input type="text" id="search-bar" placeholder="Artist, Venue, Tour" />
+        </div>
     </div>
     
+
+     <!-- Top Artisy Section -->
     <div class="container">
         <div class="top-section">
             <h1>Top Artist</h1>
