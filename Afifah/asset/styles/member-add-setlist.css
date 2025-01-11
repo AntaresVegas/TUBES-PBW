@@ -1,11 +1,10 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
     color: #333;
+    background-color: #f9f9f9;
 }
 
-/* HEADER - Bagian atas halaman */
 header {
     display: flex;
     justify-content: space-between;
@@ -16,18 +15,23 @@ header {
 }
 
 .logo {
-    /* Logo pada header */
     display: flex;
     align-items: center;
     font-size: 20px;
     font-weight: bold;
+    color: #333;
+    text-decoration: none;
 }
 
-.logo span {
-    margin-left: 5px;
+.logo span:first-child {
+    font-size: 24px;
+    margin-right: 5px;
 }
 
-/* NAVBAR - Navigasi di header */
+.logo span:last-child {
+    color: #333;
+}
+
 nav {
     margin-left: auto;
     display: flex;
@@ -35,7 +39,6 @@ nav {
 }
 
 nav a {
-    /* Gaya untuk link navigasi */
     text-decoration: none;
     color: #333;
     font-size: 16px;
@@ -48,42 +51,42 @@ nav a:hover {
     background-color: #f0f0f0;
 }
 
-
-/* Tombol autentikasi (Sign In/Register) */
 .auth-buttons {
     display: flex;
     gap: 10px;
     margin-left: 20px;
-  }
-  
-  .auth-buttons a {
-    display: inline-block;
+}
+
+.auth-buttons a {
     padding: 10px 20px;
     font-size: 14px;
-    border: 1px solid #333;
     border-radius: 5px;
-    cursor: pointer;
     text-decoration: none;
     text-align: center;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .auth-buttons .sign-in {
-    background-color: white;
-    color: #333;
-  }
-  
-  .auth-buttons .register {
-    background-color: #333;
+    border: 1px solid #333;
+    background-color: #007bff;
     color: white;
-  }
-  
-  .auth-buttons a:hover {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.auth-buttons a:hover {
     background-color: #555;
     color: white;
-  }
+}
 
-  /* Container utama */
+.auth-buttons .logout {
+    background-color: white;
+    color: #333;
+    border: 1px solid #333;
+}
+
+.auth-buttons .logout:hover {
+    background-color: #e6e6e6;
+}
+
+
+
+/* Container utama */
 .container {
     max-width: 600px;
     margin: 50px auto;
@@ -137,6 +140,26 @@ nav a:hover {
     resize: vertical; /* Membolehkan user mengubah ukuran vertikal */
 }
 
+/* Input file */
+.form-group input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="file"]:hover {
+    border-color: #333;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
 /* Tombol submit */
 .submit-btn {
     display: inline-block;
@@ -153,5 +176,5 @@ nav a:hover {
 }
 
 .submit-btn:hover {
-    background-color: #555;
+    background-color: white;
 }

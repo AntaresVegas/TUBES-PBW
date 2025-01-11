@@ -4,31 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Festival</title>
-  <link rel="stylesheet" href="../asset/styles/festival.css">
+  <link rel="stylesheet" href="../asset/styles/member-show-page.css">
 </head>
 <body>
      
-    <!-- Header, Navbar -->
-    <header>
-        <div class="logo">
-            <a href="homepage.html" style="text-decoration: none; color: inherit;">
-                <span>&#9835;</span>
-                <span>CapiList</span>
-            </a>
-        </div>
-        <nav>
-            <a href="setlist.html">Setlist</a>
-            <a href="top-artists.html">Artists</a>
-            <a href="festival.html">Festivals</a>
-            <a href="#about">About Us</a>
-        </nav>
-        <div class="auth-buttons">
-            <a href="signin.html" class="sign-in">Sign in</a>
-            <a href="register.html" class="register">Register</a>
-      </div>
-    </header>
-
-    <!-- Search Bar -->
+   <!-- Header, Navbar -->
+   <header>
+    <div class="logo">
+        <a href="homepage.html" style="text-decoration: none; color: inherit;">
+            <span>&#9835;</span>
+            <span>CapiList</span>
+        </a>
+    </div>
+    <nav>
+        <a href="member-setlist-page.html">Setlist</a>
+        <a href="member-artist-page.html">Artists</a>
+        <a href="member-show-page.html">Festivals</a>
+        <a href="#about">About Us</a>
+    </nav>
+    <div class="auth-buttons">
+        <a href="logout.html" class="logout">Log Out</a>
+  </div>
+</header>
+ 
+    <!-- Search Section -->
     <div class="search-container">
         <div class="search-box">
             <select id="category-select">
@@ -37,10 +36,10 @@
                 <option value="venue">Venue</option>
                 <option value="tour">Tour</option>
             </select>
-            <input type="text" id="search-bar" placeholder="Artist, Venue, Tour" />
+            <input type="text" id="search-bar" placeholder="Artist, Venue, Tour">
         </div>
+        <a href="member-add-show.html" class="add-show-button">Add Show</a>
     </div>
-    
 
     <!-- Setlist Festival -->
     <div class="container" id="setlist">

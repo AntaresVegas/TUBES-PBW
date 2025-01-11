@@ -5,7 +5,7 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Header */
+/* HEADER - Bagian atas halaman */
 header {
     display: flex;
     justify-content: space-between;
@@ -15,68 +15,79 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-header .logo {
-    font-size: 20px;
-    font-weight: bold;
+.logo {
+    /* Logo pada header */
     display: flex;
     align-items: center;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-header nav {
+.logo span {
+    margin-left: 5px;
+}
+
+/* NAVBAR - Navigasi di header */
+nav {
+    margin-left: auto;
     display: flex;
     gap: 20px;
 }
 
-header nav a {
+nav a {
+    /* Gaya untuk link navigasi */
     text-decoration: none;
     color: #333;
     font-size: 16px;
     padding: 5px 10px;
+    border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-header nav a:hover {
+nav a:hover {
     background-color: #f0f0f0;
 }
 
-header .auth-buttons {
+
+/*Logout*/
+
+
+
+/* Tombol autentikasi (Sign In/Register) */
+.auth-buttons {
     display: flex;
     gap: 10px;
-}
-
-header .auth-buttons a {
+    margin-left: 20px;
+  }
+  
+  .auth-buttons a {
+    display: inline-block;
     padding: 10px 20px;
     font-size: 14px;
-    border-radius: 5px;
-    text-decoration: none;
     border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
-}
-
-header .auth-buttons .sign-in {
+  }
+  
+  .auth-buttons .logout {
     background-color: white;
     color: #333;
-}
+  }
 
-header .auth-buttons .register {
-    background-color: #333;
-    color: white;
-}
-
-header .auth-buttons a:hover {
-    background-color: #555;
-    color: white;
-}
+  
 
 /* Search Container */
 .search-container {
     max-width: 100%;
     margin: 50px auto;
-    padding: 10px 20px;
+    padding: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Ubah menjadi kolom untuk tata letak vertikal */
     align-items: center;
+    gap: 15px; /* Berikan jarak antar-elemen */
 }
 
 /* Search Box */
@@ -89,28 +100,25 @@ header .auth-buttons a:hover {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 5px;
+    padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Dropdown Kategori */
 #category-select {
     width: 150px;
-    padding: 0; /* Hilangkan padding untuk lebih presisi */
-    height: 40px; /* Tetapkan tinggi dropdown untuk membantu sentralisasi */
+    padding: 5px;
+    height: 40px;
     font-size: 14px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: white;
     outline: none;
     cursor: pointer;
-    text-align: center; /* Pusatkan teks secara horizontal */
-    text-align-last: center; /* Pusatkan teks yang dipilih */
-    line-height: 40px; /* Pastikan teks berada di tengah vertikal */
+    text-align: center;
+    line-height: 40px;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
-
-
 
 #category-select:focus {
     border-color: #007bff;
@@ -122,13 +130,37 @@ header .auth-buttons a:hover {
     flex: 1;
     padding: 12px;
     font-size: 16px;
-    border: none;
-    outline: none;
+    border: 1px solid #ddd;
     border-radius: 5px;
+    outline: none;
     box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#search-bar:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 
 /* Placeholder styling */
 #search-bar::placeholder {
     color: #aaa;
+    font-style: italic;
+}
+
+/* Tombol Add Setlist */
+.add-setlist-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-setlist-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
