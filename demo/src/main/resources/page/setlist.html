@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapiList</title>
+    <title>CapiList - Popular Setlists</title>
     <link rel="stylesheet" href="/styles/setlist.css">
 </head>
 <body>
 
-     <!-- Header, Navbar -->
+    <!-- Header, Navbar -->
     <header>
         <div class="logo">
             <a href="/" style="text-decoration: none; color: inherit;">
@@ -17,14 +17,14 @@
             </a>
         </div>
         <nav>
-          <a href="/setlist">Setlist</a>
-          <a href="/artists">Artists</a>
-          <a href="/festivals">Festivals</a>
-          <a href="#about">About Us</a>
+            <a href="/setlist">Setlist</a>
+            <a href="/artists">Artists</a>
+            <a href="/festivals">Festivals</a>
+            <a href="#about">About Us</a>
         </nav>
         <div class="auth-buttons">
-        <a href="/login" class="sign-in">Sign in</a>
-        <a href="/register" class="register">Register</a>
+            <a href="/login" class="sign-in">Sign in</a>
+            <a href="/register" class="register">Register</a>
         </div>
     </header>
 
@@ -37,84 +37,54 @@
                 <option value="venue">Venue</option>
                 <option value="tour">Tour</option>
             </select>
-            <input type="text" id="search-bar" placeholder="Artist, Venue, Tour" />
+            <input type="text" id="search-bar" placeholder="Search by Artist, Venue, or Tour" />
         </div>
     </div>
 
-    <!-- Popular Setlit -->
+    <!-- Popular Setlist Section -->
     <div class="popular-setlist">
-        <h1>Popular Setlist</h1>
-        <p>Subheading</p>
+        <h1>Popular Setlists</h1>
+        <p>The most popular setlists around!</p>
         <div class="setlist-grid">
-            <div class="setlist-item">
-                <a href="setlist_detail.html">
-                    <h3>Metallica</h3>
-                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
+            <!-- Looping through setlists -->
+            <div class="setlist-item" th:each="setlist : ${setlists}">
+                <a th:href="'/setlist_details/' + ${setlist.show.id}">
+                    <h3 th:text="${setlist.show.title}"></h3>
+                    <p>
+                        <span th:text="${setlist.show.festival.name}"></span><br>
+                        <span th:text="${setlist.show.festival.location}"></span><br>
+                        <span th:text="${#dates.format(setlist.show.date, 'dd MMM yyyy')}"></span>
+                    </p>
                 </a>
             </div>
-            <div class="setlist-item">
-              <a href="setlist_detail.html">
-                    <h3>Metallica</h3>
-                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
-                </a>
-            </div>
-            <div class="setlist-item">
-                <a href="setlist_detail.html">  
-                    <h3>Metallica</h3>
-                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
-                </a>
-            </div>
-            <div class="setlist-item">
-                <a href="setlist_detail.html">
-                    <h3>Metallica</h3>
-                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
-                </a>
-            </div>
-            <div class="setlist-item">
-                <a href="setlist_detail.html">
-                    <h3>Metallica</h3>
-                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
-                </a>
-            </div>
-            <div class="setlist-item">
-                <a href="setlist_detail.html">
-                    <h3>Metallica</h3>
-                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
-                </a>
-            </div>
-            <div class="setlist-item">
-                <a href="setlist_detail.html">
-                    <h3>Metallica</h3>
-                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
-                </a>
-            </div>
-            <div class="setlist-item">
-                <a href="setlist_detail.html">
-                    <h3>Metallica</h3>
-                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
-                </a>
+            <!-- Jika tidak ada data, tampilkan pesan -->
+            <div th:if="${#lists.isEmpty(setlists)}">
+                <p>No setlists found.</p>
             </div>
         </div>
     </div>
-
 
     <!-- Footer -->
-    <footer id = "about">
+    <footer id="about">
         <div class="footer-about">
             <h2>About Us</h2>
-            <p>Selamat datang di CapiList, tempat terbaik untuk menemukan setlist artis favorit kamu di berbagai festival musik! CapiList hadir untuk memudahkan kamu mendapatkan informasi setlist yang selalu update dari festival-festival di seluruh dunia. Kami ingin jadi teman perjalanan kamu dalam menikmati musik, baik itu festival besar di luar negeri atau acara lokal yang seru. Terima kasih sudah mampir, dan semoga kamu selalu terinspirasi dengan setlist artis-artis keren di CapiList!</p>
+            <p>
+                Welcome to CapiList, the best place to find setlists of your favorite artists at various music festivals! 
+                CapiList helps you get up-to-date setlist information from festivals around the world. Thank you for visiting, 
+                and we hope you're inspired by the amazing artist setlists on CapiList!
+            </p>
         </div>
         <div class="footer-links">
             <div>
-                <h3>Use cases</h3>
+                <h3>Use Cases</h3>
                 <ul>
-                    <li><a href="#">UI design</a></li>
-                    <li><a href="#">UX design</a></li>
+                    <li><a href="#">UI Design</a></li>
+                    <li><a href="#">UX Design</a></li>
                     <li><a href="#">Wireframing</a></li>
                     <li><a href="#">Diagramming</a></li>
                     <li><a href="#">Brainstorming</a></li>
-                    <li><a href="#">Online whiteboard</a></li>
-                    <li><a href="#">Team collaboration</a></li>
+                    <li><a href="#">Online Whiteboard</a></li>
+                    <li><a href="#">Team Collaboration</a></li>
                 </ul>
             </div>
             <div>
@@ -122,10 +92,10 @@
                 <ul>
                     <li><a href="#">Design</a></li>
                     <li><a href="#">Prototyping</a></li>
-                    <li><a href="#">Development features</a></li>
-                    <li><a href="#">Design systems</a></li>
-                    <li><a href="#">Collaboration features</a></li>
-                    <li><a href="#">Design process</a></li>
+                    <li><a href="#">Development Features</a></li>
+                    <li><a href="#">Design Systems</a></li>
+                    <li><a href="#">Collaboration Features</a></li>
+                    <li><a href="#">Design Process</a></li>
                     <li><a href="#">FigJam</a></li>
                 </ul>
             </div>
@@ -133,12 +103,12 @@
                 <h3>Resources</h3>
                 <ul>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">Best practices</a></li>
+                    <li><a href="#">Best Practices</a></li>
                     <li><a href="#">Colors</a></li>
-                    <li><a href="#">Color wheel</a></li>
+                    <li><a href="#">Color Wheel</a></li>
                     <li><a href="#">Support</a></li>
                     <li><a href="#">Developers</a></li>
-                    <li><a href="#">Resource library</a></li>
+                    <li><a href="#">Resource Library</a></li>
                 </ul>
             </div>
         </div>

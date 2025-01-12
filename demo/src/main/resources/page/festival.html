@@ -46,29 +46,15 @@
         <h1>Festival</h1>
         <h2>Subheading</h2>
         <div class="grid">
-            <div class="card"> 
-                <a href="fest_detail.html" style="text-decoration: none; color: inherit;">
-                    <h3>British Summer Time 2024</h3>
-                    <p>Venue: Estadio GNP Seguros, Mexico City, Mexico</p>
-                    <p>Start: Fri, Jun 27 | End: Sun, Jun 30</p>
-                </a>
-            </div>
-            <div class="card"> 
-                <a href="fest_detail.html" style="text-decoration: none; color: inherit;">
-                    <h3>British Summer Time 2024</h3>
-                    <p>Venue: Estadio GNP Seguros, Mexico City, Mexico</p>
-                    <p>Start: Fri, Jun 27 | End: Sun, Jun 30</p>
-                </a>
-            </div>
-            <div class="card"> 
-                <a href="fest_detail.html" style="text-decoration: none; color: inherit;">
-                    <h3>British Summer Time 2024</h3>
-                    <p>Venue: Estadio GNP Seguros, Mexico City, Mexico</p>
-                    <p>Start: Fri, Jun 27 | End: Sun, Jun 30</p>
-                </a>
+            <!-- Iterasi melalui daftar festival -->
+            <div class="card" th:each="festival : ${festivals}">
+                <h3 th:text="${festival.name}"></h3>
+                <p th:text="'Venue: ' + ${festival.location}"></p>
+                <p th:text="'Start: ' + ${#dates.format(festival.startDate, 'EEE, MMM dd')} + ' | End: ' + ${#dates.format(festival.endDate, 'EEE, MMM dd')}"></p>
             </div>
         </div>
     </div>
+    
 
     <!-- About Us Section -->
     <footer id="about">

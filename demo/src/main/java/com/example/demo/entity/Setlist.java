@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -15,8 +17,18 @@ public class Setlist {
     @ManyToOne
     @JoinColumn(name = "show_id", nullable = false)
     private Show show;
-    private List<Song> songs; // Tambahkan ini
 
+    @ManyToMany
+    @JoinTable(
+        name = "setlist_songs", // Nama tabel junction
+        joinColumns = @JoinColumn(name = "setlist_id"), // Foreign key ke tabel Setlist
+        inverseJoinColumns = @JoinColumn(name = "song_id") // Foreign key ke tabel Song
+    )
+    private List<Song> songs = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "artist_id")
+    private Artist artist;
 
     // Getter dan Setter
     public Long getId() {
@@ -41,5 +53,13 @@ public class Setlist {
 
     public void setSongs(List<Song> songs) {
         this.songs = songs;
+    }
+
+    public Artist getArtist() {
+        return artist;
+    }
+
+    public void setArtist(Artist artist) {
+        this.artist = artist;
     }
 }

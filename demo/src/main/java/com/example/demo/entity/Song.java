@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -21,7 +22,8 @@ public class Song {
     private String genre;
 
     @ManyToMany(mappedBy = "songs")
-    private List<Setlist> setlists;
+private List<Setlist> setlists = new ArrayList<>();
+
 
     // Getters and Setters
     public Long getId() {

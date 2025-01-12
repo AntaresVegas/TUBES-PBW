@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -11,6 +13,9 @@ public class Artist {
     private Long id;
 
     private String name;
+
+    @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Setlist> setlists;
 
     // Getters and Setters
     public Long getId() {
@@ -27,5 +32,13 @@ public class Artist {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Setlist> getSetlists() {
+        return setlists;
+    }
+
+    public void setSetlists(List<Setlist> setlists) {
+        this.setlists = setlists;
     }
 }
