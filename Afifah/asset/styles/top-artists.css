@@ -86,18 +86,69 @@ nav a:hover {
   }
 
 /* SEARCH BAR*/
-.search-bar {
-    margin: 20px auto;
-    max-width: 600px;
-    text-align: center;
+
+/* Search Container */
+.search-container {
+    max-width: 100%;
+    margin: 50px auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.search-bar input {
+/* Search Box */
+.search-box {
+    display: flex;
+    align-items: center;
+    max-width: 700px;
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
+    gap: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown Kategori */
+#category-select {
+    width: 150px;
+    padding: 0; /* Hilangkan padding untuk lebih presisi */
+    height: 40px; /* Tetapkan tinggi dropdown untuk membantu sentralisasi */
+    font-size: 14px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    background-color: white;
+    outline: none;
+    cursor: pointer;
+    text-align: center; /* Pusatkan teks secara horizontal */
+    text-align-last: center; /* Pusatkan teks yang dipilih */
+    line-height: 40px; /* Pastikan teks berada di tengah vertikal */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+
+#category-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Search Bar */
+#search-bar {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Placeholder styling */
+#search-bar::placeholder {
+    color: #aaa;
 }
 
 

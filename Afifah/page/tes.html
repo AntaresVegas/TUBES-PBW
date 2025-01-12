@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar with Category Filter</title>
+    <link rel="stylesheet" href="../asset/styles/tes.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="homepage.html" style="text-decoration: none; color: inherit;">
+                <span>&#9835;</span>
+                <span>CapiList</span>
+            </a>
+        </div>
+        <nav>
+            <a href="setlist.html">Setlist</a>
+            <a href="#artists">Artists</a>
+            <a href="festival.html">Festivals</a>
+            <a href="#about">About Us</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="logout.html" class="logout">Logout</a>
+        </div>
+    </header>
+
+    <div class="search-container">
+        <!-- Search Box -->
+        <div class="search-box">
+            <select id="category-select">
+                <option value="all">All</option>
+                <option value="artist">Artist</option>
+                <option value="venue">Venue</option>
+                <option value="tour">Tour</option>
+            </select>
+            <input type="text" id="search-bar" placeholder="Artist, Venue, Tour">
+        </div>
+        <!-- Tombol Add Setlist -->
+        <button class="add-setlist-button">Add Setlist</button>
+    </div>
+    
+
+    <script src="../src/js/search.js"></script>
+</body>
+</html>

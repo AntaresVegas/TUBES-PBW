@@ -4,45 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit Comment</title>
-    <link rel="stylesheet" href="../asset/styles/member-comment.css">
+    <link rel="stylesheet" href="/styles/member-comment.css">
 </head>
 <body>
     <!-- Header, Navbar -->
     <header>
         <div class="logo">
-            <a href="homepage.html" style="text-decoration: none; color: inherit;">
+            <a href="/members/member-setlist-page" style="text-decoration: none; color: inherit;">
                 <span>&#9835;</span>
                 <span>CapiList</span>
             </a>
         </div>
         <nav>
-            <a href="setlist.html">Setlist</a>
-            <a href="top-artists.html">Artists</a>
-            <a href="festival.html">Festivals</a>
+            <a href="/members/member-setlist-page">Setlist</a>
+            <a href="/members/member-artist-page">Artists</a>
+            <a href="/members/member-show-page">Festivals</a>
             <a href="#about">About Us</a>
         </nav>
         <div class="auth-buttons">
-            <a href="signin.html" class="sign-in">Sign in</a>
-            <a href="register.html" class="register">Register</a>
+            <!-- Form Logout -->
+            <form action="/logout" method="post" style="display: inline;">
+                <button type="submit" class="logout">Log Out</button>
+            </form>
         </div>
-    </header>
+        </header>
 
+    <!-- Submit Comment Section -->
     <div class="container">
         <h2>Submit Comment or Correction</h2>
-        <form id="correction-form">
+        <form id="correction-form" action="/submit-comment" method="post">
+            <!-- Select Show -->
             <div class="form-group">
                 <label for="show-select">Select Show</label>
-                <select id="show-select" name="show-select" required>
+                <select id="show-select" name="showId" aria-required="true" required>
                     <option value="" disabled selected>Select a show</option>
-                    <option value="Metallica at Johan Cruijff Arena">Metallica at Johan Cruijff Arena</option>
+                    <!-- Dynamic options will be filled here by the backend -->
+                    <option value="1">Metallica at Johan Cruijff Arena</option>
+                    <option value="2">Coldplay at Wembley Stadium</option>
+                    <option value="3">Taylor Swift at SoFi Stadium</option>
                 </select>
             </div>
+            
+            <!-- Comment Section -->
             <div class="form-group">
                 <label for="comment">Comment</label>
-                <textarea id="comment" name="comment" placeholder="Enter your comment or correction" required></textarea>
+                <textarea id="comment" name="comment" placeholder="Enter your comment or correction" rows="5" aria-required="true" required></textarea>
             </div>
+            
+            <!-- Submit Button -->
             <button type="submit" class="submit-btn">Submit Comment</button>
         </form>
     </div>
+
+    <!-- About Us Section -->
+    <footer id="about">
+        <div class="footer-about">
+            <h2>About Us</h2>
+            <p>Welcome to CapiList, the best place to discover setlists of your favorite artists at various music festivals! CapiList makes it easy for you to get updated setlist information from festivals worldwide. We're here to accompany your musical journey, whether it's a major international festival or a fun local event. Thank you for visiting, and we hope you're inspired by the amazing artist setlists on CapiList!</p>
+        </div>
+        <div class="footer-links">
+            <div>
+                <h3>Use Cases</h3>
+                <ul>
+                    <li><a href="#">UI Design</a></li>
+                    <li><a href="#">UX Design</a></li>
+                    <li><a href="#">Wireframing</a></li>
+                    <li><a href="#">Diagramming</a></li>
+                    <li><a href="#">Brainstorming</a></li>
+                    <li><a href="#">Online Whiteboard</a></li>
+                    <li><a href="#">Team Collaboration</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Prototyping</a></li>
+                    <li><a href="#">Development Features</a></li>
+                    <li><a href="#">Design Systems</a></li>
+                    <li><a href="#">Collaboration Features</a></li>
+                    <li><a href="#">Design Process</a></li>
+                    <li><a href="#">FigJam</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Best Practices</a></li>
+                    <li><a href="#">Colors</a></li>
+                    <li><a href="#">Color Wheel</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Developers</a></li>
+                    <li><a href="#">Resource Library</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

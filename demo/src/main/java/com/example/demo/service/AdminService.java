@@ -26,7 +26,6 @@ public class AdminService {
     // Memperbarui admin
     public Admin updateAdmin(Long id, Admin adminDetails) {
         Admin admin = adminRepository.findById(id).orElseThrow(() -> new RuntimeException("Admin not found"));
-        admin.setUsername(adminDetails.getUsername());
         admin.setEmail(adminDetails.getEmail());
         admin.setPassword(adminDetails.getPassword());
         return adminRepository.save(admin);

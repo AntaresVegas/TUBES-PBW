@@ -1,11 +1,13 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Member;
-import com.example.demo.repository.MemberRepository;
+import java.util.Base64;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.example.demo.entity.Member;
+import com.example.demo.repository.MemberRepository;
 
 @Service
 public class MemberService {
@@ -48,23 +50,24 @@ public class MemberService {
         memberRepository.deleteById(id);
     }
 
-    public Member registerMember(String fullName, String username, String email, String password) {
-        if (memberRepository.findByUsername(username).isPresent()) {
-            throw new RuntimeException("Username already exists");
-        }
-        if (memberRepository.findByEmail(email).isPresent()) {
-            throw new RuntimeException("Email already exists");
-        }
+    public String encryptPassword(String password) {
+        return Base64.getEncoder().encodeToString(password.getBytes());
+    }
     
+    public Member registerMember(String fullName, String username, String email, String password) {
         Member member = new Member();
         member.setFullName(fullName);
         member.setUsername(username);
         member.setEmail(email);
-        member.setPassword(password); // Tidak dienkripsi
-        Member savedMember = memberRepository.save(member);
-        
-        System.out.println("Saved Member: " + savedMember); // Debug log
-        return savedMember;
+        member.setPassword(password);
+        return memberRepository.save(member);
     }
+    
+    public Member login(String email, String rawPassword) {
+        String encryptedPassword = encryptPassword(rawPassword);
+        return memberRepository.findByEmailAndPassword(email, encryptedPassword)
+                .orElseThrow(() -> new RuntimeException("Invalid email or password"));
+    }
+    
     
 }

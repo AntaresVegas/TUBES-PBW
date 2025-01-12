@@ -1,19 +1,29 @@
 package com.example.demo.dto;
 
 public class LoginResponse {
-    private String message;
+    private Long id;
+    private String email;
 
-    public LoginResponse() {}
-
-    public LoginResponse(String message) {
-        this.message = message;
+    public LoginResponse(Long id, String email) {
+        this.id = id;
+        this.email = email;
     }
 
-    public String getMessage() {
-        return message;
+    // Getter dan Setter
+    public Long getId() {
+        return id;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
+

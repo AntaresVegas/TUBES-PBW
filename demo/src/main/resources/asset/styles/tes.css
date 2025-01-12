@@ -1,88 +1,166 @@
-/* Reset dasar */
+/* Reset Dasar */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
-    color: #333;
 }
 
-/* Container utama */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center; /* Memusatkan konten dalam container */
-}
-
-/* Bagian atas */
-.top-section {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.top-section h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.top-section p {
-    font-size: 16px;
-    color: #777;
-}
-
-/* Grid untuk daftar konser */
-.concert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    justify-content: center;
-}
-
-/* Kartu konser */
-.concert-card {
+/* HEADER - Bagian atas halaman */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    /* Logo pada header */
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo span {
+    margin-left: 5px;
+}
+
+/* NAVBAR - Navigasi di header */
+nav {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    /* Gaya untuk link navigasi */
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+
+/*Logout*/
+
+
+
+/* Tombol autentikasi (Sign In/Register) */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+  }
+  
+  .auth-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .auth-buttons .logout {
+    background-color: white;
+    color: #333;
+  }
+
+  
+
+/* Search Container */
+.search-container {
+    max-width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Ubah menjadi kolom untuk tata letak vertikal */
+    align-items: center;
+    gap: 15px; /* Berikan jarak antar-elemen */
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    align-items: center;
+    max-width: 700px;
+    width: 100%;
+    gap: 10px;
+    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 20px;
-    text-align: center; /* Memusatkan teks di setiap kartu */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.concert-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.concert-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-/* Hapus warna biru pada tautan */
-.concert-card a {
-    text-decoration: none;
-    color: inherit; /* Warna mengikuti elemen induk */
-}
-
-.concert-card a:hover {
-    text-decoration: underline; /* Opsional, untuk memberikan efek hover */
-}
-
-.concert-card p {
+/* Dropdown Kategori */
+#category-select {
+    width: 150px;
+    padding: 5px;
+    height: 40px;
     font-size: 14px;
-    color: #555;
-    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Tautan dalam deskripsi */
-.concert-card p a {
-    color: inherit; /* Warna mengikuti elemen induk */
-    text-decoration: none;
+#category-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 
-.concert-card p a:hover {
-    text-decoration: underline; /* Opsional, untuk memberikan efek hover */
+/* Search Bar */
+#search-bar {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#search-bar:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Placeholder styling */
+#search-bar::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Tombol Add Setlist */
+.add-setlist-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-setlist-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Artists</title>
+    <link rel="stylesheet" href="/styles/member-artist-page.css">
+</head>
+<body>  
+    <!-- Header, Navbar -->
+    <header>
+        <div class="logo">
+            <a href="/admin" style="text-decoration: none; color: inherit;">
+                <span>&#9835;</span>
+                <span>CapiList</span>
+            </a>
+        </div>
+        <nav>
+            <a href="/admin/admin-setlist">Setlist</a>
+            <a href="/admin/admin-artists">Artists</a>
+            <a href="/admin/admin-festivals">Festivals</a>
+            <a href="/admin/members">Manage User</a>
+            <a href="#about">About Us</a>
+            <a href="/admin/admin-generate-report">Download Reports</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="/logout" class="logout">Log Out</a>
+      </div>
+    </header>
+
+    <!-- Search Section -->
+    <div class="search-container">
+        <div class="search-box">
+            <select id="category-select">
+                <option value="all">All</option>
+                <option value="artist">Artist</option>
+                <option value="venue">Venue</option>
+                <option value="tour">Tour</option>
+            </select>
+            <input type="text" id="search-bar" placeholder="Artist, Venue, Tour">
+        </div>
+        <a href="/admin/admin-add-artist" class="add-artist-button">Add Artist</a>
+    </div>
+    
+
+     <!-- Top Artisy Section -->
+    <div class="container">
+        <div class="top-section">
+            <h1>Top Artist</h1>
+            <p>Discover the most popular artists and their setlists</p>
+        </div>
+        <div class="artist-grid">
+            <!--Sudah lengkap -->
+            <div class="artist-card">
+                <a href="./top-artist-detail.html">
+                    <h3>Metallica</h3>
+                    <p>2357 Setlists</p>
+                </a>
+            </div>
+
+
+            <div class="artist-card">
+                <h3>Coldplay</h3>
+                <p>1823 Setlists</p>
+            </div>
+            <div class="artist-card">
+                <h3>Taylor Swift</h3>
+                <p>1642 Setlists</p>
+            </div>
+            <div class="artist-card">
+                <h3>Ed Sheeran</h3>
+                <p>1534 Setlists</p>
+            </div>
+            <div class="artist-card">
+                <h3>Beyoncé</h3>
+                <p>1421 Setlists</p>
+            </div>
+            <div class="artist-card">
+                <h3>Imagine Dragons</h3>
+                <p>1278 Setlists</p>
+            </div>
+            <div class="artist-card">
+                <h3>Bruno Mars</h3>
+                <p>1204 Setlists</p>
+            </div>
+            <div class="artist-card">
+                <h3>Lady Gaga</h3>
+                <p>1157 Setlists</p>
+            </div>
+            <div class="artist-card">
+                <h3>The Weeknd</h3>
+                <p>1109 Setlists</p>
+            </div>
+            <div class="artist-card">
+                <h3>Adele</h3>
+                <p>1045 Setlists</p>
+            </div>
+            <div class="artist-card">
+                <h3>Foo Fighters</h3>
+                <p>987 Setlists</p>
+            </div>
+            <div class="artist-card">
+                <h3>Billie Eilish</h3>
+                <p>920 Setlists</p>
+            </div>
+        </div>
+    </div>
+
+     <!-- Footer -->
+     <footer id = "about">
+        <div class="footer-about">
+            <h2>About Us</h2>
+            <p>Selamat datang di CapiList, tempat terbaik untuk menemukan setlist artis favorit kamu di berbagai festival musik! CapiList hadir untuk memudahkan kamu mendapatkan informasi setlist yang selalu update dari festival-festival di seluruh dunia. Kami ingin jadi teman perjalanan kamu dalam menikmati musik, baik itu festival besar di luar negeri atau acara lokal yang seru. Terima kasih sudah mampir, dan semoga kamu selalu terinspirasi dengan setlist artis-artis keren di CapiList!</p>
+        </div>
+        <div class="footer-links">
+            <div>
+                <h3>Use cases</h3>
+                <ul>
+                    <li><a href="#">UI design</a></li>
+                    <li><a href="#">UX design</a></li>
+                    <li><a href="#">Wireframing</a></li>
+                    <li><a href="#">Diagramming</a></li>
+                    <li><a href="#">Brainstorming</a></li>
+                    <li><a href="#">Online whiteboard</a></li>
+                    <li><a href="#">Team collaboration</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Prototyping</a></li>
+                    <li><a href="#">Development features</a></li>
+                    <li><a href="#">Design systems</a></li>
+                    <li><a href="#">Collaboration features</a></li>
+                    <li><a href="#">Design process</a></li>
+                    <li><a href="#">FigJam</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Best practices</a></li>
+                    <li><a href="#">Colors</a></li>
+                    <li><a href="#">Color wheel</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Developers</a></li>
+                    <li><a href="#">Resource library</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

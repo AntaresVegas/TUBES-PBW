@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapiList</title>
+    <link rel="stylesheet" href="/styles/admin-setlist.css">
+</head>
+<body>
+
+   <!-- Header, Navbar -->
+   <header>
+    <div class="logo">
+        <a href="/admin" style="text-decoration: none; color: inherit;">
+            <span>&#9835;</span>
+            <span>CapiList</span>
+        </a>
+    </div>
+    <nav>
+        <a href="/admin/admin-setlist">Setlist</a>
+        <a href="/admin/admin-artists">Artists</a>
+        <a href="/admin/admin-festivals">Festivals</a>
+        <a href="/admin/members">Manage User</a>
+        <a href="#about">About Us</a>
+        <a href="/admin/admin-generate-report">Download Reports</a>
+    </nav>
+    <div class="auth-buttons">
+        <a href="/logout" class="logout">Log Out</a>
+  </div>
+</header>
+
+    <!-- Search Section -->
+    <div class="search-container">
+        <div class="search-box">
+            <select id="category-select">
+                <option value="all">All</option>
+                <option value="artist">Artist</option>
+                <option value="venue">Venue</option>
+                <option value="tour">Tour</option>
+            </select>
+            <input type="text" id="search-bar" placeholder="Artist, Venue, Tour">
+        </div>
+        <a href="/admin/admin-add-setlist" class="add-setlist-button">Add Setlist</a>
+    </div>
+
+    <!-- Popular Setlist Section -->
+    <div class="popular-setlist">
+        <h1>Popular Setlist</h1>
+        <p>Subheading</p>
+        <div class="setlist-grid">
+            <!-- Repeating Setlist Items -->
+            <div class="setlist-item">
+                <a href="setlist_detail.html">
+                    <h3>Metallica</h3>
+                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
+                </a>
+            </div>
+            <div class="setlist-item">
+                <a href="setlist_detail.html">
+                    <h3>Metallica</h3>
+                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
+                </a>
+            </div>
+            <div class="setlist-item">
+                <a href="setlist_detail.html">
+                    <h3>Metallica</h3>
+                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
+                </a>
+            </div>
+            <div class="setlist-item">
+                <a href="setlist_detail.html">
+                    <h3>Metallica</h3>
+                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
+                </a>
+            </div>
+            <div class="setlist-item">
+                <a href="setlist_detail.html">
+                    <h3>Metallica</h3>
+                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
+                </a>
+            </div>
+            <div class="setlist-item">
+                <a href="setlist_detail.html">
+                    <h3>Metallica</h3>
+                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
+                </a>
+            </div>
+            <div class="setlist-item">
+                <a href="setlist_detail.html">
+                    <h3>Metallica</h3>
+                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
+                </a>
+            </div>
+            <div class="setlist-item">
+                <a href="setlist_detail.html">
+                    <h3>Metallica</h3>
+                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="footer-about">
+            <h2>About Us</h2>
+            <p>Welcome to CapiList, the best place to discover setlists of your favorite artists at various music festivals! CapiList makes it easy for you to get updated setlist information from festivals worldwide. We're here to accompany your musical journey, whether it's a major international festival or a fun local event. Thank you for visiting, and we hope you're inspired by the amazing artist setlists on CapiList!</p>
+        </div>
+        <div class="footer-links">
+            <div>
+                <h3>Use Cases</h3>
+                <ul>
+                    <li><a href="#">UI Design</a></li>
+                    <li><a href="#">UX Design</a></li>
+                    <li><a href="#">Wireframing</a></li>
+                    <li><a href="#">Diagramming</a></li>
+                    <li><a href="#">Brainstorming</a></li>
+                    <li><a href="#">Online Whiteboard</a></li>
+                    <li><a href="#">Team Collaboration</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Prototyping</a></li>
+                    <li><a href="#">Development Features</a></li>
+                    <li><a href="#">Design Systems</a></li>
+                    <li><a href="#">Collaboration Features</a></li>
+                    <li><a href="#">Design Process</a></li>
+                    <li><a href="#">FigJam</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Best Practices</a></li>
+                    <li><a href="#">Colors</a></li>
+                    <li><a href="#">Color Wheel</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Developers</a></li>
+                    <li><a href="#">Resource Library</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

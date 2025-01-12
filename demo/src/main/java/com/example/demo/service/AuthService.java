@@ -4,32 +4,33 @@ import com.example.demo.entity.Admin;
 import com.example.demo.entity.Member;
 import com.example.demo.repository.AdminRepository;
 import com.example.demo.repository.MemberRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class AuthService {
 
     @Autowired
-    private MemberRepository memberRepository;
-
-    @Autowired
     private AdminRepository adminRepository;
 
-    public String login(String username, String password) {
-        Optional<Member> member = memberRepository.findByUsernameAndPassword(username, password);
-        if (member.isPresent()) {
-            return "Login successful as Member";
+    @Autowired
+    private MemberRepository memberRepository;
+
+    public Object login(String email, String password) {
+        // Cek apakah email ada di tabel admin
+        Admin admin = adminRepository.findByEmail(email).orElse(null);
+        if (admin != null && admin.getPassword().equals(password)) {
+            return admin; // Jika admin, kembalikan objek admin
         }
-    
-        Optional<Admin> admin = adminRepository.findByUsernameAndPassword(username, password);
-        if (admin.isPresent()) {
-            return "Login successful as Admin";
+
+        // Cek apakah email ada di tabel member
+        Member member = memberRepository.findByEmail(email).orElse(null);
+        if (member != null && member.getPassword().equals(password)) {
+            return member; // Jika member, kembalikan objek member
         }
-    
-        throw new RuntimeException("Invalid username or password");
+
+        // Jika email/password salah
+        throw new RuntimeException("Invalid email or password");
     }
-    
 }

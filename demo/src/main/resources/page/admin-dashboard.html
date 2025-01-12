@@ -4,39 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../asset/styles/admin-dashboard.css">
+    <link rel="stylesheet" href="/styles/admin-dashboard.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="logo">
-            <a href="homepage.html" style="text-decoration: none; color: inherit;">
+            <a href="/admin" style="text-decoration: none; color: inherit;">
                 <span>&#9835;</span>
                 <span>CapiList</span>
             </a>
         </div>
         <nav>
-            <a href="setlist.html">Setlist</a>
-            <a href="top-artists.html">Artists</a>
-            <a href="festival.html">Festivals</a>
+            <a href="/admin/admin-setlist">Setlist</a>
+            <a href="/admin/admin-artist">Artists</a>
+            <a href="/admin/admin-show">Festivals</a>
             <a href="#about">About Us</a>
         </nav>
         <div class="auth-buttons">
-            <a href="signin.html" class="sign-in">Sign in</a>
-            <a href="register.html" class="register">Register</a>
-      </div>
+            <!-- Logout Button -->
+            <form action="/logout" method="post" style="display: inline;">
+                <button type="submit" class="logout">Log Out</button>
+            </form>
+        </div>
     </header>
 
+    <!-- Admin Dashboard Content -->
     <div class="container">
         <h1>Welcome, Admin</h1>
-        <p>Manage all features available for members and admin-specific tasks:</p>
+        <p>Manage all features available for members and perform admin-specific tasks:</p>
         <div class="admin-links">
-            <a href="./member-add-artist.html" class="admin-link">Add Artist</a>
-            <a href="./member-add-show.html" class="admin-link">Add Show</a>
-            <a href="./member-add-setlist.html" class="admin-link">Add Setlist</a>
-            <a href="./member-comment.html" class="admin-link">Submit Comment</a>
-            <a href="./admin-manage-user.html" class="admin-link">Manage Users</a>
-            <a href="./admin-generate-report.html" class="admin-link">Generate Reports</a>
+            <a href="/admin/admin-add-artist" class="admin-link">Add Artist</a>
+            <a href="/admin/admin-add-show" class="admin-link">Add Show</a>
+            <a href="/admin/admin-add-setlist" class="admin-link">Add Setlist</a>
+            <a href="/admin/admin-comment" class="admin-link">Submit Comment</a>
+            <a href="/admin/members" class="admin-link">Manage Users</a>
+            <a href="/admin/admin-generate-report" class="admin-link">Generate Reports</a>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="footer-about">
+            <h2>About Us</h2>
+            <p>
+                Welcome to CapiList, the best place to discover and manage setlists of your favorite artists at various
+                music festivals! We provide tools for admins to oversee all data and keep the platform running smoothly.
+            </p>
+        </div>
+    </footer>
 </body>
 </html>

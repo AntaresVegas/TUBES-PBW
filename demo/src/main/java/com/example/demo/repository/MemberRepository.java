@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface MemberRepository extends JpaRepository<Member, Long> {
     Optional<Member> findByEmail(String email);
     Optional<Member> findByUsername(String username);
-    Optional<Member> findByUsernameAndPassword(String username, String password);
+    Optional<Member> findByEmailAndPassword(String email, String password);
 }

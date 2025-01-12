@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Artists</title>
+    <link rel="stylesheet" href="/styles/member-artist-page.css">
+</head>
+<body>
+    <!-- Header, Navbar -->
+    <header>
+        <div class="logo">
+            <a href="/members/member-setlist-page" style="text-decoration: none; color: inherit;">
+                <span>&#9835;</span>
+                <span>CapiList</span>
+            </a>
+        </div>
+        <nav>
+            <a href="/members/member-setlist-page">Setlist</a>
+            <a href="/members/member-artist-page">Artists</a>
+            <a href="/members/member-show-page">Festivals</a>
+            <a href="#about">About Us</a>
+        </nav>
+        <div class="auth-buttons">
+            <!-- Form Logout -->
+            <form action="/logout" method="post" style="display: inline;">
+                <button type="submit" class="logout">Log Out</button>
+            </form>
+        </div>
+        </header>
+
+    <!-- Search Section -->
+    <div class="search-container">
+        <div class="search-box">
+            <select id="category-select" aria-label="Category selection">
+                <option value="all">All</option>
+                <option value="artist">Artist</option>
+                <option value="venue">Venue</option>
+                <option value="tour">Tour</option>
+            </select>
+            <input type="text" id="search-bar" placeholder="Search by Artist, Venue, or Tour" aria-label="Search bar">
+        </div>
+        <a href="/members/member-add-artist" class="add-artist-button" aria-label="Add new artist">Add Artist</a>
+    </div>
+
+    <!-- Top Artists Section -->
+    <div class="container">
+        <div class="top-section">
+            <h1>Top Artists</h1>
+            <p>Discover the most popular artists and their setlists</p>
+        </div>
+        <div class="artist-grid">
+            <!-- Artist Cards -->
+            <div class="artist-card">
+                <a href="/artist-detail/metallica">
+                    <h3>Metallica</h3>
+                    <p>2357 Setlists</p>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="/artist-detail/coldplay">
+                    <h3>Coldplay</h3>
+                    <p>1823 Setlists</p>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="/artist-detail/taylor-swift">
+                    <h3>Taylor Swift</h3>
+                    <p>1642 Setlists</p>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="/artist-detail/ed-sheeran">
+                    <h3>Ed Sheeran</h3>
+                    <p>1534 Setlists</p>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="/artist-detail/beyonce">
+                    <h3>Beyoncé</h3>
+                    <p>1421 Setlists</p>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="/artist-detail/imagine-dragons">
+                    <h3>Imagine Dragons</h3>
+                    <p>1278 Setlists</p>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="/artist-detail/bruno-mars">
+                    <h3>Bruno Mars</h3>
+                    <p>1204 Setlists</p>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="/artist-detail/lady-gaga">
+                    <h3>Lady Gaga</h3>
+                    <p>1157 Setlists</p>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="/artist-detail/the-weeknd">
+                    <h3>The Weeknd</h3>
+                    <p>1109 Setlists</p>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="/artist-detail/adele">
+                    <h3>Adele</h3>
+                    <p>1045 Setlists</p>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="/artist-detail/foo-fighters">
+                    <h3>Foo Fighters</h3>
+                    <p>987 Setlists</p>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="/artist-detail/billie-eilish">
+                    <h3>Billie Eilish</h3>
+                    <p>920 Setlists</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="footer-about">
+            <h2>About Us</h2>
+            <p>Welcome to CapiList, the best place to discover setlists of your favorite artists at various music festivals! CapiList makes it easy for you to get updated setlist information from festivals worldwide. We're here to accompany your musical journey, whether it's a major international festival or a fun local event. Thank you for visiting, and we hope you're inspired by the amazing artist setlists on CapiList!</p>
+        </div>
+        <div class="footer-links">
+            <div>
+                <h3>Use Cases</h3>
+                <ul>
+                    <li><a href="#">UI Design</a></li>
+                    <li><a href="#">UX Design</a></li>
+                    <li><a href="#">Wireframing</a></li>
+                    <li><a href="#">Diagramming</a></li>
+                    <li><a href="#">Brainstorming</a></li>
+                    <li><a href="#">Online Whiteboard</a></li>
+                    <li><a href="#">Team Collaboration</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Prototyping</a></li>
+                    <li><a href="#">Development Features</a></li>
+                    <li><a href="#">Design Systems</a></li>
+                    <li><a href="#">Collaboration Features</a></li>
+                    <li><a href="#">Design Process</a></li>
+                    <li><a href="#">FigJam</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Best Practices</a></li>
+                    <li><a href="#">Colors</a></li>
+                    <li><a href="#">Color Wheel</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Developers</a></li>
+                    <li><a href="#">Resource Library</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

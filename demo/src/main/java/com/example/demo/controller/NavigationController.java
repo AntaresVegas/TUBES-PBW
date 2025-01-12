@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class NavigationController {
 
@@ -19,5 +21,10 @@ public class NavigationController {
     @GetMapping("/festivals")
     public String festivalsPage() {
         return "festival"; // Mengarah ke festival.html di folder templates/page
+    }
+
+    @GetMapping("/signin-required")
+    public String signinRequiredPage() {
+        return "signin-required"; // Mengarah ke festival.html di folder templates/page
     }
 }

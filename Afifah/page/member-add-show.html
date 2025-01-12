@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Show</title>
+    <link rel="stylesheet" href="../asset/styles/member-add-show.css">
+</head>
+<body>
+     <!-- Header, Navbar -->
+     <header>
+        <div class="logo">
+            <a href="member-setlist-page.html" style="text-decoration: none; color: inherit;">
+                <span>&#9835;</span>
+                <span>CapiList</span>
+            </a>
+        </div>
+        <nav>
+            <a href="member-setlist-page.html">Setlist</a>
+            <a href="member-artist-page.html">Artists</a>
+            <a href="member-show-page.html">Festivals</a>
+            <a href="#about">About Us</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="logout.html" class="logout">Log Out</a>
+      </div>
+    </header>
+
+    <div class="container">
+        <h2>Add New Show</h2>
+        <form id="add-show-form">
+            <div class="form-group">
+                <label for="artist-select">Select Artist</label>
+                <select id="artist-select" name="artist-select" required>
+                    <option value="" disabled selected>Select an artist</option>
+                    <option value="Metallica">Metallica</option>
+                    <option value="Coldplay">Coldplay</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="concert-name">Concert Name</label>
+                <input type="text" id="concert-name" name="concert-name" placeholder="Enter concert name" required>
+            </div>
+            <div class="form-group">
+                <label for="venue">Venue</label>
+                <input type="text" id="venue" name="venue" placeholder="Enter venue name" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <button type="submit" class="submit-btn">Add Show</button>
+        </form>
+    </div>
+
+</body>
+</html>

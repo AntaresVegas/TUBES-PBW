@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Member</title>
+    <link rel="stylesheet" href="../asset/styles/admin-edit-member.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Member</h2>
+        <form id="edit-member-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <p id="name" class="read-only-field">John Doe</p>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <p id="email" class="read-only-field">john.doe@example.com</p>
+            </div>
+            <div class="form-group">
+                <label for="edit-role">Role</label>
+                <select id="edit-role" name="edit-role" required>
+                    <option value="member" selected>Member</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">Save Changes</button>
+            <button type="button" id="delete-member-btn" class="delete-btn">Delete Member</button>
+            <a href="./admin-dashboard.html" class="cancel-btn">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

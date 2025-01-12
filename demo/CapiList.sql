@@ -1,87 +1,82 @@
--- Database: CapiList
+-- DROP TABLE untuk menghapus tabel jika sudah ada
+DROP TABLE IF EXISTS comments;
+DROP TABLE IF EXISTS songs;
+DROP TABLE IF EXISTS shows;
+DROP TABLE IF EXISTS festivals;
+DROP TABLE IF EXISTS setlists;
+DROP TABLE IF EXISTS members;
+DROP TABLE IF EXISTS admins;
+DROP TABLE IF EXISTS artists;
 
--- DROP DATABASE IF EXISTS "CapiList";
-
-CREATE DATABASE "CapiList"
-    WITH
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'English_Indonesia.1252'
-    LC_CTYPE = 'English_Indonesia.1252'
-    LOCALE_PROVIDER = 'libc'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1
-    IS_TEMPLATE = False;
-
-
-DROP TABLE IF EXISTS Festival_Schedule;
-DROP TABLE IF EXISTS Setlists;
-DROP TABLE IF EXISTS Shows;
-DROP TABLE IF EXISTS Festivals;
-DROP TABLE IF EXISTS Artists;
-DROP TABLE IF EXISTS Members;
-DROP TABLE IF EXISTS Admins;
-
-SELECT * FROM Members
-SELECT table_name FROM information_schema.tables WHERE table_schema='public';
-
-
--- Tabel Members
-CREATE TABLE Members (
-    id SERIAL PRIMARY KEY,               -- ID unik untuk setiap member
-    full_name VARCHAR(100) NOT NULL,     -- Nama lengkap member
-    username VARCHAR(50) NOT NULL UNIQUE, -- Username unik
-    email VARCHAR(100) NOT NULL UNIQUE,  -- Email unik
-    password VARCHAR(255) NOT NULL       -- Password
+-- Membuat ulang tabel sesuai desain sebelumnya
+CREATE TABLE admins (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL
 );
 
-
-CREATE TABLE Admins (
-    id SERIAL PRIMARY KEY,               -- ID unik untuk setiap admin
-    username VARCHAR(50) NOT NULL UNIQUE, -- Username unik
-    email VARCHAR(100) NOT NULL UNIQUE,  -- Email unik
-    password VARCHAR(255) NOT NULL       -- Password
+CREATE TABLE members (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    full_name VARCHAR(100) NOT NULL
 );
 
-
-CREATE TABLE Artists (
-    id SERIAL PRIMARY KEY,               -- ID unik untuk setiap artis
-    name VARCHAR(100) NOT NULL UNIQUE    -- Nama artis
+CREATE TABLE artists (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
 );
 
-
-CREATE TABLE Shows (
-    id SERIAL PRIMARY KEY,               -- ID unik untuk setiap konser
-    artist_id INT NOT NULL,              -- ID artis terkait
-    name VARCHAR(100) NOT NULL,          -- Nama konser
-    venue VARCHAR(100) NOT NULL,         -- Tempat konser
-    date DATE NOT NULL,                  -- Tanggal konser
-    FOREIGN KEY (artist_id) REFERENCES Artists(id) ON DELETE CASCADE
+CREATE TABLE festivals (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    location VARCHAR(100) NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL
 );
 
-
-CREATE TABLE Setlists (
-    id SERIAL PRIMARY KEY,               -- ID unik untuk setiap setlist
-    show_id INT NOT NULL,                -- ID konser terkait
-    songs TEXT NOT NULL,                 -- Daftar lagu (dipisahkan koma)
-    FOREIGN KEY (show_id) REFERENCES Shows(id) ON DELETE CASCADE
+CREATE TABLE shows (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    artist_id INT NOT NULL,
+    festival_id INT NOT NULL,
+    date DATE NOT NULL,
+    FOREIGN KEY (artist_id) REFERENCES artists (id) ON DELETE CASCADE,
+    FOREIGN KEY (festival_id) REFERENCES festivals (id) ON DELETE CASCADE
 );
 
-
-CREATE TABLE Festivals (
-    id SERIAL PRIMARY KEY,               -- ID unik untuk setiap festival
-    name VARCHAR(100) NOT NULL,          -- Nama festival
-    venue VARCHAR(100) NOT NULL,         -- Tempat festival
-    start_date DATE NOT NULL,            -- Tanggal mulai festival
-    end_date DATE NOT NULL               -- Tanggal akhir festival
+CREATE TABLE songs (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    artist_id INT NOT NULL,
+    genre VARCHAR(100),
+    FOREIGN KEY (artist_id) REFERENCES artists (id) ON DELETE CASCADE
 );
 
-
-CREATE TABLE Festival_Schedule (
-    id SERIAL PRIMARY KEY,               -- ID unik untuk jadwal festival
-    festival_id INT NOT NULL,            -- ID festival terkait
-    show_id INT NOT NULL,                -- ID konser terkait
-    time TIME NOT NULL,                  -- Waktu konser dalam festival
-    FOREIGN KEY (festival_id) REFERENCES Festivals(id) ON DELETE CASCADE,
-    FOREIGN KEY (show_id) REFERENCES Shows(id) ON DELETE CASCADE
+CREATE TABLE setlists (
+    id SERIAL PRIMARY KEY,
+    show_id INT NOT NULL,
+    song_id INT NOT NULL,
+    FOREIGN KEY (show_id) REFERENCES shows (id) ON DELETE CASCADE,
+    FOREIGN KEY (song_id) REFERENCES songs (id) ON DELETE CASCADE
 );
+
+CREATE TABLE comments (
+    id SERIAL PRIMARY KEY,
+    member_id INT NOT NULL,
+    comment TEXT NOT NULL,
+    festival_id INT NOT NULL,
+    FOREIGN KEY (member_id) REFERENCES members (id) ON DELETE CASCADE,
+    FOREIGN KEY (festival_id) REFERENCES festivals (id) ON DELETE CASCADE
+);
+
+-- SELECT semua data dari masing-masing tabel
+SELECT * FROM admins;
+SELECT * FROM members;
+SELECT * FROM artists;
+SELECT * FROM festivals;
+SELECT * FROM shows;
+SELECT * FROM songs;
+SELECT * FROM setlists;
+SELECT * FROM comments;
