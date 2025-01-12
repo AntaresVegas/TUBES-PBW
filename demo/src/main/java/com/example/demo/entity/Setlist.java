@@ -1,32 +1,31 @@
 package com.example.demo.entity;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "setlists") // Pastikan nama tabel benar
+@Table(name = "setlists") // Pastikan nama tabel sesuai di database
 public class Setlist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "show_id", nullable = false)
     private Show show;
 
     @ManyToMany
     @JoinTable(
-        name = "setlist_songs", // Nama tabel junction
-        joinColumns = @JoinColumn(name = "setlist_id"), // Foreign key ke tabel Setlist
-        inverseJoinColumns = @JoinColumn(name = "song_id") // Foreign key ke tabel Song
+        name = "setlist_songs", // Tabel junction untuk setlist dan songs
+        joinColumns = @JoinColumn(name = "setlist_id"), // FK ke Setlist
+        inverseJoinColumns = @JoinColumn(name = "song_id") // FK ke Song
     )
     private List<Song> songs = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "artist_id")
     private Artist artist;
 
@@ -62,4 +61,10 @@ public class Setlist {
     public void setArtist(Artist artist) {
         this.artist = artist;
     }
+
+    public void addSong(Song song) {
+        this.songs.add(song);
+        song.getSetlists().add(this);
+    }
+    
 }

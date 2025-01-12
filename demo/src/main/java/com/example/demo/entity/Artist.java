@@ -34,11 +34,5 @@ public class Artist {
         this.name = name;
     }
 
-    public List<Setlist> getSetlists() {
-        return setlists;
-    }
-
-    public void setSetlists(List<Setlist> setlists) {
-        this.setlists = setlists;
-    }
+    
 }

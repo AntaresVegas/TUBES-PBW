@@ -49,80 +49,17 @@
             <h1>Top Artists</h1>
             <p>Discover the most popular artists and their setlists</p>
         </div>
-        <div class="artist-grid">
-            <!-- Artist Cards -->
-            <div class="artist-card">
-                <a href="/artist-detail/metallica">
-                    <h3>Metallica</h3>
-                    <p>2357 Setlists</p>
-                </a>
+        <div class="container">
+            <div class="top-section">
             </div>
-            <div class="artist-card">
-                <a href="/artist-detail/coldplay">
-                    <h3>Coldplay</h3>
-                    <p>1823 Setlists</p>
-                </a>
+            <div class="artist-grid">
+                <!-- Iterasi menggunakan Thymeleaf -->
+                <div class="artist-card" th:each="artist : ${artists}">
+                    <h3 th:text="${artist.name}">Artist Name</h3>
+                    <p th:text="'Setlists: ' + ${artist.setlistCount}">Setlists Count</p>
+                </div>
             </div>
-            <div class="artist-card">
-                <a href="/artist-detail/taylor-swift">
-                    <h3>Taylor Swift</h3>
-                    <p>1642 Setlists</p>
-                </a>
-            </div>
-            <div class="artist-card">
-                <a href="/artist-detail/ed-sheeran">
-                    <h3>Ed Sheeran</h3>
-                    <p>1534 Setlists</p>
-                </a>
-            </div>
-            <div class="artist-card">
-                <a href="/artist-detail/beyonce">
-                    <h3>Beyoncé</h3>
-                    <p>1421 Setlists</p>
-                </a>
-            </div>
-            <div class="artist-card">
-                <a href="/artist-detail/imagine-dragons">
-                    <h3>Imagine Dragons</h3>
-                    <p>1278 Setlists</p>
-                </a>
-            </div>
-            <div class="artist-card">
-                <a href="/artist-detail/bruno-mars">
-                    <h3>Bruno Mars</h3>
-                    <p>1204 Setlists</p>
-                </a>
-            </div>
-            <div class="artist-card">
-                <a href="/artist-detail/lady-gaga">
-                    <h3>Lady Gaga</h3>
-                    <p>1157 Setlists</p>
-                </a>
-            </div>
-            <div class="artist-card">
-                <a href="/artist-detail/the-weeknd">
-                    <h3>The Weeknd</h3>
-                    <p>1109 Setlists</p>
-                </a>
-            </div>
-            <div class="artist-card">
-                <a href="/artist-detail/adele">
-                    <h3>Adele</h3>
-                    <p>1045 Setlists</p>
-                </a>
-            </div>
-            <div class="artist-card">
-                <a href="/artist-detail/foo-fighters">
-                    <h3>Foo Fighters</h3>
-                    <p>987 Setlists</p>
-                </a>
-            </div>
-            <div class="artist-card">
-                <a href="/artist-detail/billie-eilish">
-                    <h3>Billie Eilish</h3>
-                    <p>920 Setlists</p>
-                </a>
-            </div>
+            
         </div>
     </div>
 

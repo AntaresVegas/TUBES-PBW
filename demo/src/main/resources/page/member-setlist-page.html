@@ -47,28 +47,23 @@
 
     <!-- Popular Setlist Section -->
     <div class="popular-setlist">
-        <h1>Popular Setlist</h1>
-        <p>Explore the most popular setlists from your favorite artists and shows!</p>
+        <h1>Popular Setlists</h1>
+        <p>The most popular setlists around!</p>
         <div class="setlist-grid">
-            <!-- Placeholder Dinamis -->
-            <!-- Gunakan template engine atau API untuk menghasilkan elemen ini -->
-            <div class="setlist-item">
-                <a href="/setlist/1">
-                    <h3>Metallica</h3>
-                    <p>British Summer Time 2025<br>Madison Square<br>12 December 2025</p>
+            <!-- Looping through setlists -->
+            <div class="setlist-item" th:each="setlist : ${setlists}">
+                <a th:href="'/setlist_details/' + ${setlist.show.id}">
+                    <h3 th:text="${setlist.show.title}"></h3>
+                    <p>
+                        <span th:text="${setlist.show.festival.name}"></span><br>
+                        <span th:text="${setlist.show.festival.location}"></span><br>
+                        <span th:text="${#dates.format(setlist.show.date, 'dd MMM yyyy')}"></span>
+                    </p>
                 </a>
             </div>
-            <div class="setlist-item">
-                <a href="/setlist/2">
-                    <h3>Queen</h3>
-                    <p>Rock Legends Festival 2025<br>Wembley Arena<br>15 July 2025</p>
-                </a>
-            </div>
-            <div class="setlist-item">
-                <a href="/setlist/3">
-                    <h3>Coldplay</h3>
-                    <p>Music of the Spheres Tour<br>Tokyo Dome<br>20 September 2025</p>
-                </a>
+            <!-- Jika tidak ada data, tampilkan pesan -->
+            <div th:if="${#lists.isEmpty(setlists)}">
+                <p>No setlists found.</p>
             </div>
         </div>
     </div>

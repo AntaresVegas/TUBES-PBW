@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
 import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,8 +14,6 @@ import com.example.demo.service.ArtistService;
 import com.example.demo.service.FestivalService;
 import com.example.demo.service.SetlistService;
 
-import jakarta.servlet.http.HttpSession;
-
 @Controller
 public class NavigationController {
 
@@ -25,9 +21,6 @@ public class NavigationController {
     private SetlistService setlistService;
 
     @Autowired
-    private ArtistService artistService;
-
-     @Autowired
     private ArtistRepository artistRepository;
 
     @Autowired

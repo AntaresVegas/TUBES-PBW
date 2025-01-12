@@ -6,7 +6,7 @@ import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "songs") // Pastikan nama tabel benar
+@Table(name = "songs") // Pastikan nama tabel sesuai dengan database
 public class Song {
 
     @Id
@@ -22,8 +22,7 @@ public class Song {
     private String genre;
 
     @ManyToMany(mappedBy = "songs")
-private List<Setlist> setlists = new ArrayList<>();
-
+    private List<Setlist> setlists = new ArrayList<>();
 
     // Getters and Setters
     public Long getId() {
@@ -64,5 +63,17 @@ private List<Setlist> setlists = new ArrayList<>();
 
     public void setSetlists(List<Setlist> setlists) {
         this.setlists = setlists;
+    }
+
+    // Utility method to add a setlist
+    public void addSetlist(Setlist setlist) {
+        setlists.add(setlist);
+        setlist.getSongs().add(this);
+    }
+
+    // Utility method to remove a setlist
+    public void removeSetlist(Setlist setlist) {
+        setlists.remove(setlist);
+        setlist.getSongs().remove(this);
     }
 }

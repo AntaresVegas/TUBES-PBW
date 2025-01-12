@@ -28,16 +28,36 @@
       </div>
     </header>
 
-    <div class="container">
-        <h2>Add New Artist</h2>
-        <form id="add-artist-form">
-            <div class="form-group">
-                <label for="artist-name">Artist Name</label>
-                <input type="text" id="artist-name" name="artist-name" placeholder="Enter artist name" required>
-            </div>
-            <button type="submit" class="submit-btn">Add Artist</button>
-        </form>
-    </div>
+    <form action="/admin/add-setlist" method="post">
+        <div>
+            <label for="show">Show:</label>
+            <select id="show" name="showId" required>
+                <option value="" disabled selected>Pilih Show</option>
+                <th:block th:each="show : ${shows}">
+                    <option th:value="${show.id}" th:text="${show.title}"></option>
+                </th:block>
+            </select>
+        </div>
+    
+        <div>
+            <label for="artist">Artist:</label>
+            <select id="artist" name="artistId" required>
+                <option value="" disabled selected>Pilih Artist</option>
+                <th:block th:each="artist : ${artists}">
+                    <option th:value="${artist.id}" th:text="${artist.name}"></option>
+                </th:block>
+            </select>
+        </div>
+    
+        <div>
+            <label for="setlist">Setlist:</label>
+            <textarea id="setlist" name="setlist" placeholder="Masukkan lagu, pisahkan dengan koma"></textarea>
+        </div>
+    
+        <button type="submit">Submit</button>
+    </form>
+    
+    
 
 </body>
 </html>

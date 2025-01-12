@@ -30,24 +30,35 @@
 
     <div class="container">
         <h2>Add New Setlist</h2>
-        <form id="add-setlist-form">
-            <div class="form-group">
-                <label for="show-select">Select Show</label>
-                <select id="show-select" name="show-select" required>
-                    <option value="" disabled selected>Select a show</option>
-                    <option value="Metallica at Johan Cruijff Arena">Metallica at Johan Cruijff Arena</option>
+        <form action="/admin/admin-add-setlist" method="post">
+            <div>
+                <label for="show">Show:</label>
+                <select id="show" name="showId" required>
+                    <option value="" disabled selected>Pilih Show</option>
+                    <th:block th:each="show : ${shows}">
+                        <option th:value="${show.id}" th:text="${show.title}"></option>
+                    </th:block>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="setlist">Setlist (separate songs with commas)</label>
-                <textarea id="setlist" name="setlist" placeholder="Enter setlist" required></textarea>
+        
+            <div>
+                <label for="artist">Artist:</label>
+                <select id="artist" name="artistId" required>
+                    <option value="" disabled selected>Pilih Artist</option>
+                    <th:block th:each="artist : ${artists}">
+                        <option th:value="${artist.id}" th:text="${artist.name}"></option>
+                    </th:block>
+                </select>
             </div>
-            <div class="form-group">
-                <label for="upload-document">Upload Document</label>
-                <input type="file" id="upload-document" name="upload-document" accept=".txt,.pdf,.doc,.docx">
+        
+            <div>
+                <label for="setlist">Setlist:</label>
+                <textarea id="setlist" name="setlist" placeholder="Masukkan lagu, pisahkan dengan koma"></textarea>
             </div>
-            <button type="submit" class="submit-btn">Add Setlist</button>
+        
+            <button type="submit">Tambah Setlist</button>
         </form>
+                
     </div>
 
 </body>
