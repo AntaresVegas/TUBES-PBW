@@ -49,19 +49,19 @@
             <h1>Top Artists</h1>
             <p>Discover the most popular artists and their setlists</p>
         </div>
-        <div class="container">
-            <div class="top-section">
+        <div class="artist-grid">
+            <!-- Looping data artis menggunakan Thymeleaf -->
+            <div class="artist-card" th:each="artist : ${artists}">
+                <h3 th:text="${artist.name}">Artist Name</h3>
+                <p th:text="'Setlists: ' + ${artist.setlistCount}">Setlists Count</p>
             </div>
-            <div class="artist-grid">
-                <!-- Iterasi menggunakan Thymeleaf -->
-                <div class="artist-card" th:each="artist : ${artists}">
-                    <h3 th:text="${artist.name}">Artist Name</h3>
-                    <p th:text="'Setlists: ' + ${artist.setlistCount}">Setlists Count</p>
-                </div>
+            <!-- Jika tidak ada data -->
+            <div th:if="${#lists.isEmpty(artists)}">
+                <p>No artists found.</p>
             </div>
-            
         </div>
     </div>
+    
 
     <!-- Footer -->
     <footer id="about">

@@ -1,10 +1,12 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.ArtistSetlistDTO;
 import com.example.demo.entity.Artist;
 import com.example.demo.entity.Member;
 import com.example.demo.entity.Setlist;
 import com.example.demo.entity.Show;
 import com.example.demo.entity.Song;
+import com.example.demo.repository.ArtistRepository;
 import com.example.demo.service.ArtistService;
 import com.example.demo.service.MemberService;
 import com.example.demo.service.SetlistService;
@@ -40,6 +42,9 @@ public class MemberController {
     @Autowired
     private SongService songService;
 
+    @Autowired
+    private ArtistRepository artistRepository;
+
     // Get all members
     @GetMapping
     public String manageMembers(Model model) {
@@ -72,13 +77,17 @@ public class MemberController {
 
     // Halaman Member Setlist Page
     @GetMapping("/member-setlist-page")
-    public String showMemberSetlistPage() {
+    public String showMemberSetlistPage(Model model) {
+        List<Setlist> setlists = setlistService.getAllSetlists();
+            model.addAttribute("setlists", setlists);
         return "member-setlist-page"; // Nama file HTML
     }
 
     // Halaman Member Artist Page
     @GetMapping("/member-artist-page")
-    public String showMemberArtistPage() {
+    public String getMemberArtistPage(Model model) {
+        List<ArtistSetlistDTO> artists = artistRepository.findArtistsWithSetlistCount();
+        model.addAttribute("artists", artists);
         return "member-artist-page"; // Nama file HTML
     }
 
@@ -138,50 +147,50 @@ public class MemberController {
         return "member-add-artist";
     }
 
+        // Menangani form penambahan setlist
+        @PostMapping("/member-add-setlist")
+        public String addSetlist(@RequestParam("showId") Long showId,
+                                @RequestParam("artistId") Long artistId,
+                                @RequestParam("setlist") String setlist) {
+            try {
+                // Ambil show dan artist berdasarkan ID
+                Show show = showService.getShowById(showId);
+                Artist artist = artistService.getArtistById(artistId);
 
-    // Menangani form penambahan setlist
-@PostMapping("/member-add-setlist")
-public String addSetlist(@RequestParam("showId") Long showId,
-                         @RequestParam("artistId") Long artistId,
-                         @RequestParam("setlist") String setlist) {
-    try {
-        // Ambil show dan artist berdasarkan ID
-        Show show = showService.getShowById(showId);
-        Artist artist = artistService.getArtistById(artistId);
+                // Buat setlist baru
+                Setlist newSetlist = new Setlist();
+                newSetlist.setShow(show);
+                newSetlist.setArtist(artist);
 
-        // Buat setlist baru
-        Setlist newSetlist = new Setlist();
-        newSetlist.setShow(show);
-        newSetlist.setArtist(artist);
+                // Proses lagu dari input setlist
+                String[] songTitles = setlist.split(",");
+                List<Song> songs = new ArrayList<>();
+                for (String title : songTitles) {
+                    title = title.trim(); // Hilangkan spasi di awal/akhir
+                    Optional<Song> optionalSong = songService.findByTitleAndArtist(title, artist);
+                    Song song;
+                    if (optionalSong.isPresent()) {
+                        song = optionalSong.get();
+                    } else {
+                        // Jika lagu tidak ditemukan, buat baru
+                        song = new Song();
+                        song.setTitle(title);
+                        song.setArtist(artist);
+                        songService.addSong(song);
+                    }
+                    songs.add(song);
+                }
+                newSetlist.setSongs(songs);
 
-        // Proses lagu dari input setlist
-        String[] songTitles = setlist.split(",");
-        List<Song> songs = new ArrayList<>();
-        for (String title : songTitles) {
-            title = title.trim(); // Hilangkan spasi di awal/akhir
-            Optional<Song> optionalSong = songService.findByTitleAndArtist(title, artist);
-            Song song;
-            if (optionalSong.isPresent()) {
-                song = optionalSong.get();
-            } else {
-                // Jika lagu tidak ditemukan, buat baru
-                song = new Song();
-                song.setTitle(title);
-                song.setArtist(artist);
-                songService.addSong(song);
+                // Simpan setlist ke database
+                setlistService.addSetlist(newSetlist);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                return "redirect:/members/member-add-setlist?error";
             }
-            songs.add(song);
+            return "redirect:/members/member-setlist-page?success";
         }
-        newSetlist.setSongs(songs);
 
-        // Simpan setlist ke database
-        setlistService.addSetlist(newSetlist);
-
-    } catch (Exception e) {
-        e.printStackTrace();
-        return "redirect:/members/member-add-setlist?error";
-    }
-    return "redirect:/members/member-setlist-page?success";
-}
 
 }

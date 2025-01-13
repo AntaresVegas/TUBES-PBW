@@ -50,9 +50,9 @@
         <h1>Popular Setlists</h1>
         <p>The most popular setlists around!</p>
         <div class="setlist-grid">
-            <!-- Looping through setlists -->
+            <!-- Looping through setlists menggunakan Thymeleaf -->
             <div class="setlist-item" th:each="setlist : ${setlists}">
-                <a th:href="'/setlist_details/' + ${setlist.show.id}">
+                <a th:href="'/setlist_details/' + ${setlist.id}">
                     <h3 th:text="${setlist.show.title}"></h3>
                     <p>
                         <span th:text="${setlist.show.festival.name}"></span><br>
@@ -67,6 +67,7 @@
             </div>
         </div>
     </div>
+    
 
     <!-- Footer -->
     <footer id="about">
